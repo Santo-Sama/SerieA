@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/serie_a
+    username: postgres
+    password: 210800
+  jpa:
+    database: postgresql
+    show_sql: true
+    hibernate:
+      ddl-auto: create-drop
