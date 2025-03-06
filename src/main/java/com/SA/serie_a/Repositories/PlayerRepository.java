@@ -11,15 +11,15 @@ import java.util.List;
 @Repository
 public interface PlayerRepository extends JpaRepository<Player,String> {
 
-    @Query(value = "select * from player_stats ps where ps.team = :team")
+    @Query(value = "select * from player_stats ps where ps.team = :team", nativeQuery = true)
     List<Player> findByTeam(@Param("team") String team);
 
-    @Query(value = "select * from player_stats ps where ps.name = :name")
+    @Query(value = "select * from player_stats ps where ps.name = :name", nativeQuery = true)
     Player findByName(@Param("name") String name);
 
-    @Query(value = "select * from player_stats ps where ps.role = :role")
+    @Query(value = "select * from player_stats ps where ps.role = :role", nativeQuery = true)
     List<Player> findByRole(@Param("role") String role);
 
-    @Query(value = "select * from player_stats ps where ps.nation = :nation")
+    @Query(value = "select * from player_stats ps where ps.nation = :nation", nativeQuery = true)
     List<Player> findByNation(@Param("nation") String nation);
 }
