@@ -23,8 +23,8 @@ public class PlayerService {
         return playerRepository.findByTeam(teamName);
     }
 
-    public List<Player> getPlayerByName(String name){
-        return playerRepository.findByName(name);
+    public Optional<Player> getPlayerByName(String name){
+        return Optional.of(playerRepository.findByName(name));
     }
 
     public List<Player> getPlayerByRole(String role){
@@ -60,5 +60,9 @@ public class PlayerService {
     @Transactional
     public void deletePlayer(String playerName){
         playerRepository.deleteById(playerName);
+    }
+
+    public List<Player> getAllPlayer(){
+        return playerRepository.findAll();
     }
 }
